@@ -1,0 +1,3 @@
+# Linux amd64 CPU deployment input. Normal local development uses requirements.txt.
+-r requirements.txt
+torch==2.14.0+cpu

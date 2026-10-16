@@ -1,0 +1,52 @@
+services:
+  backend:
+    build: ./backend
+    platform: linux/amd64
+    stop_grace_period: 40s
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      APP_ENV: production
+      DEBUG: "false"
+      PORT: "8000"
+      CORS_ORIGINS: ${CORS_ORIGINS:-["http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173"]}
+      QDRANT_URL: http://qdrant:6333
+      QDRANT_COLLECTION_NAME: ${QDRANT_COLLECTION_NAME:-deepdocs_chunks}
+      EMBEDDING_MODEL_NAME: ${EMBEDDING_MODEL_NAME:-sentence-transformers/all-MiniLM-L6-v2}
+      EMBEDDING_BATCH_SIZE: ${EMBEDDING_BATCH_SIZE:-32}
+      MAX_UPLOAD_SIZE_MB: ${MAX_UPLOAD_SIZE_MB:-10}
+      CHUNK_SIZE: ${CHUNK_SIZE:-1000}
+      CHUNK_OVERLAP: ${CHUNK_OVERLAP:-150}
+      LLM_PROVIDER: ${LLM_PROVIDER:-openai_compatible}
+      LLM_MODEL: ${LLM_MODEL:-}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_BASE_URL: ${LLM_BASE_URL:-https://api.openai.com/v1}
+      LLM_TEMPERATURE: ${LLM_TEMPERATURE:-0.1}
+      LLM_MAX_OUTPUT_TOKENS: ${LLM_MAX_OUTPUT_TOKENS:-800}
+      LLM_TIMEOUT_SECONDS: ${LLM_TIMEOUT_SECONDS:-30}
+      RAG_TOP_K_DEFAULT: ${RAG_TOP_K_DEFAULT:-5}
+      RAG_MAX_CONTEXT_CHARS: ${RAG_MAX_CONTEXT_CHARS:-12000}
+      CHUNKING_STRATEGY: ${CHUNKING_STRATEGY:-character}
+      TOKEN_CHUNK_SIZE: ${TOKEN_CHUNK_SIZE:-200}
+      TOKEN_CHUNK_OVERLAP: ${TOKEN_CHUNK_OVERLAP:-32}
+      RETRIEVAL_STRATEGY: ${RETRIEVAL_STRATEGY:-dense}
+      RETRIEVAL_CANDIDATE_COUNT: ${RETRIEVAL_CANDIDATE_COUNT:-20}
+      RRF_CONSTANT: ${RRF_CONSTANT:-60}
+      RERANKER_MODEL_NAME: ${RERANKER_MODEL_NAME:-cross-encoder/ms-marco-MiniLM-L6-v2}
+      RERANK_CANDIDATE_COUNT: ${RERANK_CANDIDATE_COUNT:-20}
+      RERANKER_BATCH_SIZE: ${RERANKER_BATCH_SIZE:-16}
+      HF_HUB_OFFLINE: ${HF_HUB_OFFLINE:-0}
+      HF_HOME: /home/appuser/.cache/huggingface
+    volumes:
+      - model_cache:/home/appuser/.cache/huggingface
+    depends_on:
+      - qdrant
+  qdrant:
+    image: qdrant/qdrant:v1.19.0
+    ports:
+      - "127.0.0.1:6333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+volumes:
+  qdrant_data:
+  model_cache:

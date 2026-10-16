@@ -1,0 +1,102 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "maxLength": 100,
+      "minLength": 1,
+      "title": "Id",
+      "type": "string"
+    },
+    "question": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Question",
+      "type": "string"
+    },
+    "expected_document_id": {
+      "default": null,
+      "title": "Expected Document Id",
+      "type": "null"
+    },
+    "expected_chunk_ids": {
+      "items": {
+        "format": "uuid",
+        "type": "string"
+      },
+      "maxItems": 1000,
+      "title": "Expected Chunk Ids",
+      "type": "array"
+    },
+    "reference_answer": {
+      "maxLength": 10000,
+      "minLength": 1,
+      "title": "Reference Answer",
+      "type": "string"
+    },
+    "expects_no_answer": {
+      "title": "Expects No Answer",
+      "type": "boolean"
+    },
+    "filter_document_id": {
+      "anyOf": [
+        {
+          "format": "uuid",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Filter Document Id"
+    },
+    "tags": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 50,
+      "title": "Tags",
+      "type": "array"
+    },
+    "difficulty": {
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ],
+      "title": "Difficulty",
+      "type": "string"
+    },
+    "category": {
+      "title": "Category",
+      "type": "string"
+    },
+    "expected_document_ids": {
+      "items": {
+        "format": "uuid",
+        "type": "string"
+      },
+      "maxItems": 1000,
+      "title": "Expected Document Ids",
+      "type": "array"
+    },
+    "notes": {
+      "default": "",
+      "maxLength": 10000,
+      "title": "Notes",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "question",
+    "expected_chunk_ids",
+    "reference_answer",
+    "expects_no_answer",
+    "difficulty",
+    "category",
+    "expected_document_ids"
+  ],
+  "title": "BenchmarkCase",
+  "type": "object"
+}

@@ -1,0 +1,211 @@
+[
+  {
+    "id": "growth",
+    "question": "What was revenue growth?",
+    "retrieved": [
+      {
+        "chunk_id": "c7a57974-f4b9-5879-958c-28609e4d1b37",
+        "document_id": "5ad93325-05ef-564f-8533-a20cf51e3456",
+        "text": "Revenue grew by 20% in 2025. Growth was driven by new enterprise customers.",
+        "source_filename": "revenue.txt",
+        "page_number": null,
+        "chunk_index": 0,
+        "score": 1.0
+      },
+      {
+        "chunk_id": "dbe227e3-6c3a-556f-80c3-b83b4938fe22",
+        "document_id": "584dfb56-4e6f-5cea-a917-3b7d0ce811be",
+        "text": "The company operates three distribution centers. Inventory is reviewed weekly.",
+        "source_filename": "operations.txt",
+        "page_number": null,
+        "chunk_index": 0,
+        "score": 0.8
+      },
+      {
+        "chunk_id": "71a9cc4e-10c1-5ea6-b07c-0c476e5d9562",
+        "document_id": "4d804da5-c7bc-5ff7-94d3-34d7c8699066",
+        "text": "Supply-chain disruption and regulatory exposure were the major risks.",
+        "source_filename": "risks.txt",
+        "page_number": null,
+        "chunk_index": 0,
+        "score": 0.9
+      }
+    ],
+    "response": {
+      "question": "What was revenue growth?",
+      "answer": "Revenue grew by 20% in 2025 [1].",
+      "citations": [
+        {
+          "source_number": 1,
+          "chunk_id": "c7a57974-f4b9-5879-958c-28609e4d1b37",
+          "document_id": "5ad93325-05ef-564f-8533-a20cf51e3456",
+          "source_filename": "revenue.txt",
+          "page_number": null,
+          "chunk_index": 0
+        }
+      ]
+    },
+    "judge": {
+      "faithfulness": 0.9,
+      "answer_relevance": 0.8,
+      "correctness": 0.85,
+      "reason": "Synthetic fixed demonstration scores, not a semantic assessment."
+    }
+  },
+  {
+    "id": "risks",
+    "question": "What were the major risks?",
+    "retrieved": [
+      {
+        "chunk_id": "dbe227e3-6c3a-556f-80c3-b83b4938fe22",
+        "document_id": "584dfb56-4e6f-5cea-a917-3b7d0ce811be",
+        "text": "The company operates three distribution centers. Inventory is reviewed weekly.",
+        "source_filename": "operations.txt",
+        "page_number": null,
+        "chunk_index": 0,
+        "score": 0.8
+      },
+      {
+        "chunk_id": "71a9cc4e-10c1-5ea6-b07c-0c476e5d9562",
+        "document_id": "4d804da5-c7bc-5ff7-94d3-34d7c8699066",
+        "text": "Supply-chain disruption and regulatory exposure were the major risks.",
+        "source_filename": "risks.txt",
+        "page_number": null,
+        "chunk_index": 0,
+        "score": 0.9
+      }
+    ],
+    "response": {
+      "question": "What were the major risks?",
+      "answer": "The major risks were supply-chain disruption and regulatory exposure [2].",
+      "citations": [
+        {
+          "source_number": 2,
+          "chunk_id": "71a9cc4e-10c1-5ea6-b07c-0c476e5d9562",
+          "document_id": "4d804da5-c7bc-5ff7-94d3-34d7c8699066",
+          "source_filename": "risks.txt",
+          "page_number": null,
+          "chunk_index": 0
+        }
+      ]
+    },
+    "judge": {
+      "faithfulness": 0.9,
+      "answer_relevance": 0.8,
+      "correctness": 0.85,
+      "reason": "Synthetic fixed demonstration scores, not a semantic assessment."
+    }
+  },
+  {
+    "id": "growth-and-risks",
+    "question": "Summarize revenue growth and the major risks.",
+    "retrieved": [
+      {
+        "chunk_id": "dbe227e3-6c3a-556f-80c3-b83b4938fe22",
+        "document_id": "584dfb56-4e6f-5cea-a917-3b7d0ce811be",
+        "text": "The company operates three distribution centers. Inventory is reviewed weekly.",
+        "source_filename": "operations.txt",
+        "page_number": null,
+        "chunk_index": 0,
+        "score": 0.8
+      },
+      {
+        "chunk_id": "c7a57974-f4b9-5879-958c-28609e4d1b37",
+        "document_id": "5ad93325-05ef-564f-8533-a20cf51e3456",
+        "text": "Revenue grew by 20% in 2025. Growth was driven by new enterprise customers.",
+        "source_filename": "revenue.txt",
+        "page_number": null,
+        "chunk_index": 0,
+        "score": 1.0
+      },
+      {
+        "chunk_id": "71a9cc4e-10c1-5ea6-b07c-0c476e5d9562",
+        "document_id": "4d804da5-c7bc-5ff7-94d3-34d7c8699066",
+        "text": "Supply-chain disruption and regulatory exposure were the major risks.",
+        "source_filename": "risks.txt",
+        "page_number": null,
+        "chunk_index": 0,
+        "score": 0.9
+      }
+    ],
+    "response": {
+      "question": "Summarize revenue growth and the major risks.",
+      "answer": "Revenue grew by 20% [2]. The major risks were supply-chain disruption and regulatory exposure [3].",
+      "citations": [
+        {
+          "source_number": 2,
+          "chunk_id": "c7a57974-f4b9-5879-958c-28609e4d1b37",
+          "document_id": "5ad93325-05ef-564f-8533-a20cf51e3456",
+          "source_filename": "revenue.txt",
+          "page_number": null,
+          "chunk_index": 0
+        },
+        {
+          "source_number": 3,
+          "chunk_id": "71a9cc4e-10c1-5ea6-b07c-0c476e5d9562",
+          "document_id": "4d804da5-c7bc-5ff7-94d3-34d7c8699066",
+          "source_filename": "risks.txt",
+          "page_number": null,
+          "chunk_index": 0
+        }
+      ]
+    },
+    "judge": {
+      "faithfulness": 0.9,
+      "answer_relevance": 0.8,
+      "correctness": 0.85,
+      "reason": "Synthetic fixed demonstration scores, not a semantic assessment."
+    }
+  },
+  {
+    "id": "filtered-operations",
+    "question": "How many distribution centers does the company operate?",
+    "retrieved": [
+      {
+        "chunk_id": "dbe227e3-6c3a-556f-80c3-b83b4938fe22",
+        "document_id": "584dfb56-4e6f-5cea-a917-3b7d0ce811be",
+        "text": "The company operates three distribution centers. Inventory is reviewed weekly.",
+        "source_filename": "operations.txt",
+        "page_number": null,
+        "chunk_index": 0,
+        "score": 0.8
+      }
+    ],
+    "response": {
+      "question": "How many distribution centers does the company operate?",
+      "answer": "The company operates three distribution centers [1].",
+      "citations": [
+        {
+          "source_number": 1,
+          "chunk_id": "dbe227e3-6c3a-556f-80c3-b83b4938fe22",
+          "document_id": "584dfb56-4e6f-5cea-a917-3b7d0ce811be",
+          "source_filename": "operations.txt",
+          "page_number": null,
+          "chunk_index": 0
+        }
+      ]
+    },
+    "judge": {
+      "faithfulness": 0.9,
+      "answer_relevance": 0.8,
+      "correctness": 0.85,
+      "reason": "Synthetic fixed demonstration scores, not a semantic assessment."
+    }
+  },
+  {
+    "id": "unknown",
+    "question": "What is the chief executive's favorite planet?",
+    "retrieved": [],
+    "response": {
+      "question": "What is the chief executive's favorite planet?",
+      "answer": "I could not find relevant information in the indexed documents.",
+      "citations": []
+    },
+    "judge": {
+      "faithfulness": 0.9,
+      "answer_relevance": 0.8,
+      "correctness": 0.85,
+      "reason": "Synthetic fixed demonstration scores, not a semantic assessment."
+    }
+  }
+]

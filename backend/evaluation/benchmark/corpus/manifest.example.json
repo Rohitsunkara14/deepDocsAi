@@ -1,0 +1,39 @@
+{
+  "documents": [
+    {
+      "id": "airtel-2025-26",
+      "filename": "Airtel---Annual-Report-2026.pdf",
+      "category": "annual-report"
+    },
+    {
+      "id": "tcs-2025-26",
+      "filename": "annual-report-2025-2026.pdf",
+      "category": "annual-report"
+    },
+    {
+      "id": "infosys-2024-25",
+      "filename": "infosys-ar-25.pdf",
+      "category": "annual-report"
+    },
+    {
+      "id": "itc-2024-25",
+      "filename": "ITC-Report-and-Accounts-2025.pdf",
+      "category": "annual-report"
+    },
+    {
+      "id": "reliance-2025-26",
+      "filename": "RIL-Integrated-Annual-Report-2025-26.pdf",
+      "category": "annual-report"
+    },
+    {
+      "id": "sun-pharma-2025-26",
+      "filename": "Sun-Pharma_AR-2025-26.pdf",
+      "category": "annual-report"
+    },
+    {
+      "id": "tata-motors-2024-25",
+      "filename": "tata-motor-IAR-2024-25.pdf",
+      "category": "annual-report"
+    }
+  ]
+}

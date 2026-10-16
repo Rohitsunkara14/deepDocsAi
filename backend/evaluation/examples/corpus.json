@@ -1,0 +1,17 @@
+{
+  "notice": "Fictional demonstration documents; not a benchmark of model quality.",
+  "documents": [
+    {
+      "filename": "revenue.txt",
+      "text": "Revenue grew by 20% in 2025. Growth was driven by new enterprise customers."
+    },
+    {
+      "filename": "risks.txt",
+      "text": "Supply-chain disruption and regulatory exposure were the major risks."
+    },
+    {
+      "filename": "operations.txt",
+      "text": "The company operates three distribution centers. Inventory is reviewed weekly."
+    }
+  ]
+}
